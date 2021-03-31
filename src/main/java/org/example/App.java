@@ -11,6 +11,8 @@ public class App {
 
         String t1;
         String t2;
+        long fib;
+        long fib2;
         //Cat cat = new Cat();
         // cat.noResult("Мурзик",10);
         //Tasks task01 = new Tasks();
@@ -28,9 +30,16 @@ public class App {
         t2 = task02.main2(110,200);
         System.out.println(t2);
 
-        task1(140);
-        task2(50,70);
+        //task1(140);
+        //task2(50,70);
 
+        //Метод рекурсия
+        fib = Tasks.fib(6);
+        System.out.println(fib);
+
+        //Метод рекурсия тернарный
+        fib2 = Tasks.fib2(30);
+        System.out.println(fib2);
 
     }
 

@@ -4,7 +4,8 @@ public class Tasks {
     String numStr;
     //String numStr2;
 
-    public static String main(int par1) {
+    public static String main(int par1)
+    {
         //поиск простого числа
         String numStr = " ";
         for (int i = 2; i < par1; i++) {
@@ -51,5 +52,25 @@ public class Tasks {
         return numStr2;
     }
 
+    public static long fib(int num)// номер в последовательности
+    {
+        ///Числа Фибоначчи(Рекурсия)
+        if (num <= 1)
+        {return num;}
+        else { return fib(num - 1) + fib(num - 2);}
 
-}
+     }
+        //System.out.println(numStr);
+        //return numStr; //Возвращаем без вывода
+
+    public static long fib2(int num)// номер в последовательности
+    {
+        ///Числа Фибоначчи(Рекурсия)
+        return num <= 1 ? num : fib2(num - 1) + fib2(num - 2);
+
+    }
+
+    }
+
+
+
