@@ -16,7 +16,7 @@ public class Tasks {
             }
         }
         //System.out.println(numStr);
-        return numStr;
+        return numStr; //Возвращаем без вывода
 
     }
 

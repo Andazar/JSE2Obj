@@ -16,13 +16,14 @@ public class App {
         //Tasks task01 = new Tasks();
         //t1 = task01.main(110);
 
+         //Метод static
         t1 = Tasks.main(7);
 
         //System.out.println(t1);
         //System.out.println(task01.main(111));
         System.out.println(t1);
 
-
+        //Метод не static
         Tasks task02 = new Tasks();
         t2 = task02.main2(110,200);
         System.out.println(t2);
