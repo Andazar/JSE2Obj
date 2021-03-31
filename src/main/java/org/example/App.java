@@ -41,6 +41,24 @@ public class App {
         fib2 = Tasks.fib2(30);
         System.out.println(fib2);
 
+        //Computer myComp = new Computer();
+        //myComp.getInfo();
+
+        //Computer Comp1 = new Computer(100,10000, 1000, 512, 60);
+        //myComp.getInfo();
+
+        Transport plane = new Transport("Самолет", 800, 200000, 400);
+        Transport ship = new Transport("Корабль", 80, 5000000, 100);
+        Transport truck = new Transport("Грузовик", 120, 20000, 200);
+
+        int kg = 10000;
+        int km = 2400;
+
+        System.out.println(plane.calc(kg, km));
+        System.out.println(ship.calc(kg, km));
+        System.out.println(truck.calc(kg, km));
+
+
     }
 
     static void task1(int par1) {
