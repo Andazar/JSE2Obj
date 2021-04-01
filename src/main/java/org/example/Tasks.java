@@ -70,6 +70,12 @@ public class Tasks {
 
     }
 
+    public static void compareObject(Object obj1)// номер в последовательности
+    {
+        System.out.println(obj1 instanceof Transport);
+    }
+
+
     }
 
 

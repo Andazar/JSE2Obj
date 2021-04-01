@@ -1,10 +1,15 @@
 package org.example;
 
+
+
+
 public class Transport {
     String model;
     int speed;
     int weightLif;
     int priceKm;
+
+    public  Transport(){}
 
     @Override
     public String toString() {
@@ -56,6 +61,7 @@ public class Transport {
     }
 
 
+    //protected
     public String calc(int kg, int km) {
         int price;
         int time;

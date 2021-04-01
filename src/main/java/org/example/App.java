@@ -53,14 +53,54 @@ public class App {
 
         int kg = 10000;
         int km = 2400;
+        int heiKm = 8500;
 
         System.out.println(plane.calc(kg, km));
         System.out.println(ship.calc(kg, km));
         System.out.println(truck.calc(kg, km));
 
 
-    }
+       //Самалет
+        Plane plane2 = new Plane("Боинг", 900, 230000, 380,9600,74);
+        plane2.fly();
+        //plane2.setWeight(1234);
+        //plane2.setWingspan(74);
 
+        System.out.println( plane2.getWeightLif());
+        System.out.println( plane2.getWingspan());
+
+        System.out.println(plane2.calc(kg, km, heiKm));
+
+        //Корабль
+        Ship ship2 = new Ship();
+        //ship2.fly();
+        ship2.sail();
+        ship2.setModel("Титаник");
+        ship2.setDraught(12);
+
+        System.out.println( ship2.getModel());
+        System.out.println( ship2.getDraught());
+        System.out.println( ship2.getWeightLif());
+
+        //Грузовик
+        Truck truck2 = new Truck();
+        truck2.ride();
+        //truck2.sail();
+        truck2.setEngPower(560);
+
+        System.out.println( truck2.getWeightLif());
+        System.out.println( truck2.getEngPower());
+
+        /*System.out.println(plane2 instanceof Transport);
+        System.out.println(ship2 instanceof Transport);
+        System.out.println(truck2 instanceof Transport);
+        System.out.println(ship instanceof Truck);*/
+
+
+
+
+    }
+/*
     static void task1(int par1) {
         //поиск простого числа
         String numStr = " ";
@@ -106,6 +146,6 @@ public class App {
     }
         System.out.println(numStr2);
 }
-
+*/
 
 }
