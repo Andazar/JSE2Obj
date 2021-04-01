@@ -4,6 +4,19 @@ public class Truck extends Transport {
     int engPower;
     int countWheels;
 
+    public Truck(String newModel, int newSpeed, int newWeightLif, int newPriceKm, int engPower, int countWheels) {
+        super(newModel, newSpeed, newWeightLif, newPriceKm);
+        this.engPower = engPower;
+        this.countWheels = countWheels;
+    }
+
+    @Override
+    String abstractGo(int km) {
+        int h = km/speed;
+        return "Проехать " + km + "км. займет " + h + "ч.";
+    }
+
+
 
     public void ride() {
         System.out.println("Я еду");}

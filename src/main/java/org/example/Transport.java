@@ -2,10 +2,10 @@ package org.example;
 
 
 
-
-public class Transport {
+//final  public
+abstract public class  Transport {
     String model;
-    int speed;
+    int speed = 1;
     int weightLif;
     int priceKm;
 
@@ -62,7 +62,7 @@ public class Transport {
 
 
     //protected
-    public String calc(int kg, int km) {
+    public final String calc(int kg, int km) {
         int price;
         int time;
         int OverLim = kg - weightLif;
@@ -79,4 +79,9 @@ public class Transport {
                     " за " + price + "р. за " + time+ " часов. ";
         }
     }
+
+
+    abstract String abstractGo(int km);
+
+
 }

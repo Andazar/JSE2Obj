@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.DB.OracleConnector;
+
 /**
  * Hello world!
  *
@@ -47,17 +49,17 @@ public class App {
         //Computer Comp1 = new Computer(100,10000, 1000, 512, 60);
         //myComp.getInfo();
 
-        Transport plane = new Transport("Самолет", 800, 200000, 400);
-        Transport ship = new Transport("Корабль", 80, 5000000, 100);
-        Transport truck = new Transport("Грузовик", 120, 20000, 200);
+        //Transport plane = new Transport("Самолет", 800, 200000, 400);
+        //Transport ship = new Transport("Корабль", 80, 5000000, 100);
+        //Transport truck = new Transport("Грузовик", 120, 20000, 200);
 
         int kg = 10000;
         int km = 2400;
         int heiKm = 8500;
 
-        System.out.println(plane.calc(kg, km));
-        System.out.println(ship.calc(kg, km));
-        System.out.println(truck.calc(kg, km));
+        //System.out.println(plane.calc(kg, km));
+        //System.out.println(ship.calc(kg, km));
+        //System.out.println(truck.calc(kg, km));
 
 
        //Самалет
@@ -78,18 +80,18 @@ public class App {
         ship2.setModel("Титаник");
         ship2.setDraught(12);
 
-        System.out.println( ship2.getModel());
-        System.out.println( ship2.getDraught());
-        System.out.println( ship2.getWeightLif());
+        //System.out.println( ship2.getModel());
+        //System.out.println( ship2.getDraught());
+        //System.out.println( ship2.getWeightLif());
 
         //Грузовик
-        Truck truck2 = new Truck();
+        Truck truck2 = new Truck("Volvo", 140, 23000, 180,420,14);
         truck2.ride();
         //truck2.sail();
         truck2.setEngPower(560);
 
-        System.out.println( truck2.getWeightLif());
-        System.out.println( truck2.getEngPower());
+        //System.out.println( truck2.getWeightLif());
+        //System.out.println( truck2.getEngPower());
 
         /*System.out.println(plane2 instanceof Transport);
         System.out.println(ship2 instanceof Transport);
@@ -100,11 +102,11 @@ public class App {
         int n = 6;
         if (n % 2 == 0)
         {
-            transport = plane2;
+            transport = new Plane("Аэробус",900, 230000, 380,9600,74);
         }
         else
         {
-            transport = truck;
+            transport = new Truck("MEN",160, 28000, 190,600,18);;
         }
 
         //тип не приведен, используется метот из Transport а не из Plane
@@ -112,6 +114,13 @@ public class App {
 
         //Каст - приведение типа, при n - нечетном, будет эксепшн
         System.out.println( ((Plane)transport).calc(kg, km,heiKm) );
+
+        System.out.println(transport.abstractGo(km));
+        System.out.println(truck2.abstractGo(km));
+        System.out.println(ship2.abstractGo(km));
+
+        OracleConnector oraCon = new OracleConnector();
+        System.out.println(oraCon.delete(6));
 
     }
 /*

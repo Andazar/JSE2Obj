@@ -14,8 +14,8 @@ public class Plane extends Transport {
 
 
     public String calc(int kg, int km, int heiKm)
-    {
-        String OverHeig = "";
+    {//final
+         String OverHeig = "";
         String chPrice = "";
 
         if (8000/heiKm>1)
@@ -32,6 +32,13 @@ public class Plane extends Transport {
           return  OverHeig + " " + super.calc(kg, km) + " " +  chPrice;
 
     }
+
+    @Override
+    String abstractGo(int km) {
+           int h = km/speed;
+        return "Перелет на " + km + "км. займет " + h + "ч.";
+    }
+
 
     public void fly() {
         System.out.println("Я лечу");}
@@ -51,5 +58,6 @@ public class Plane extends Transport {
     public void setWingspan(int wingspan) {
         this.wingspan = wingspan;
     }
+
 
 }
