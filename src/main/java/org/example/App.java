@@ -96,8 +96,22 @@ public class App {
         System.out.println(truck2 instanceof Transport);
         System.out.println(ship instanceof Truck);*/
 
+        Transport transport;
+        int n = 6;
+        if (n % 2 == 0)
+        {
+            transport = plane2;
+        }
+        else
+        {
+            transport = truck;
+        }
 
+        //тип не приведен, используется метот из Transport а не из Plane
+        System.out.println(transport.calc(kg, km));
 
+        //Каст - приведение типа, при n - нечетном, будет эксепшн
+        System.out.println( ((Plane)transport).calc(kg, km,heiKm) );
 
     }
 /*
