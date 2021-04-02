@@ -1,20 +1,24 @@
 package org.example;
 
 import org.example.DB.OracleConnector;
+import org.example.store.MyBoxException;
+import org.example.store.Box;
 
 /**
  * Hello world!
  *
  */
 public class App {
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-        System.out.println("Hi All!");
-
+    public static void main(String[] args) throws MyBoxException {
+        boolean wasErr = false;
         String t1;
         String t2;
         long fib;
         long fib2;
+
+        System.out.println("Hello World!");
+        System.out.println("Hi All!");
+
         //Cat cat = new Cat();
         // cat.noResult("Мурзик",10);
         //Tasks task01 = new Tasks();
@@ -111,16 +115,69 @@ public class App {
 
         //тип не приведен, используется метот из Transport а не из Plane
         System.out.println(transport.calc(kg, km));
+        //
+        //System.out.println(((Plane) transport).calc(kg, km, heiKm));
 
-        //Каст - приведение типа, при n - нечетном, будет эксепшн
-        System.out.println( ((Plane)transport).calc(kg, km,heiKm) );
+        try
+        {
+            int u = 1/1;
+            // Каст - приведение типа, при n - нечетном, будет эксепшн
+            System.out.println(((Plane) transport).calc(kg, km, heiKm));
+        }
+        catch (ClassCastException castErr)
+        {
+            wasErr = true;
+            System.out.println("Метод не подходит для данного класса");
+        }
+        catch (Exception err)
+        {
+            wasErr = true;
+            System.out.println("Ошибка в коде: " + err.getClass() + err.getMessage() );
+        }
+        finally
+        {
+            if (wasErr == true)
+            { System.out.println("Было бнаружено исключение");   }
+            else {System.out.println("Исключений не обнаружено");  }
+
+        }
 
         System.out.println(transport.abstractGo(km));
         System.out.println(truck2.abstractGo(km));
         System.out.println(ship2.abstractGo(km));
 
+ int[] arr ={-10,20,-10};
+ Box korob;
+
+    try {
+        korob = new Box(arr[0],arr[1],arr[2]);
+    }
+
+    catch (Exception myErr)
+    {
+        wasErr = true;
+        System.out.println("Ошибка в коде: " + myErr.getClass() + ": " + myErr.getMessage() );
+        //if (arr[0]<0) {arr[0]=arr[0]*(-1);}
+        //else if (arr[1]<0) {arr[1]=arr[1]*(-1);}
+        //else if (arr[2]<0) {arr[2]=arr[2]*(-1);}
+        //korob = new Box(10,10,10);
+
+        korob = new Box(Math.abs(arr[0]),Math.abs(arr[1]),Math.abs(arr[2]));
+        System.out.println("Создана коробка c положительными размерностями");
+
+    }
+    finally
+    {
+        if (wasErr == true)
+        { System.out.println("Было бнаружено исключение");   }
+        else {System.out.println("Исключений не обнаружено");  }
+
+    }
+        System.out.println(korob.toString());
+
         OracleConnector oraCon = new OracleConnector();
         System.out.println(oraCon.delete(6));
+
 
     }
 /*
