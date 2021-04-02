@@ -1,8 +1,9 @@
 package org.example;
 
 import org.example.DB.OracleConnector;
-import org.example.store.MyBoxException;
-import org.example.store.Box;
+import org.example.store.*;
+
+import java.util.ArrayList;
 
 /**
  * Hello world!
@@ -178,6 +179,62 @@ public class App {
         OracleConnector oraCon = new OracleConnector();
         System.out.println(oraCon.delete(6));
 
+        Prog prog1 = new Prog(01,"Первая версия");
+        Prog prog2 = new Prog("01.1","Изменения для первой версии");
+
+        System.out.println(prog1.getVers());
+        System.out.println(prog1.getDescrip());
+        System.out.println(prog2.getVers());
+        System.out.println(prog2.getDescrip());
+
+
+        Circle circle1 = new Circle(5);
+        System.out.println("Площадь круга с радиусом "+ circle1.getR() + "см. равна: " +circle1.getCircSqeare()+ "см2.");
+
+        //Коллекция
+        ArrayList<String> cats = new ArrayList<String>();
+        cats.add("Мурзик");
+        cats.add("Барсик");
+        cats.add("Муся");
+        cats.add("Тима");
+
+        System.out.println("Количество котов в коллекции: " + cats.size());
+        System.out.println(cats.get(3));
+
+
+        System.out.println("FIFO");
+        FIFO fifo = new FIFO();
+        fifo.addEvent("Первое");
+        fifo.addEvent("Второе");
+        System.out.println(fifo.prosEvent());
+
+        fifo.addEvent("Третье");
+        fifo.addEvent("Четвертое");
+        System.out.println(fifo.prosEvent());
+
+        fifo.addEvent("Пятое");
+        fifo.addEvent("Шестое");
+        System.out.println(fifo.prosEvent());
+
+
+        System.out.println(fifo.getEvents());
+
+        System.out.println("LIFO");
+        LIFO lifo = new LIFO();
+        lifo.addEvent("Первое");
+        lifo.addEvent("Второе");
+        System.out.println(lifo.prosEvent());
+
+        lifo.addEvent("Третье");
+        lifo.addEvent("Четвертое");
+        System.out.println(lifo.prosEvent());
+
+        lifo.addEvent("Пятое");
+        lifo.addEvent("Шестое");
+        System.out.println(lifo.prosEvent());
+
+
+        System.out.println(lifo.getEvents());
 
     }
 /*
